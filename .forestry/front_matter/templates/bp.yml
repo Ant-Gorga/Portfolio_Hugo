@@ -1,0 +1,22 @@
+---
+label: bp
+hide_body: true
+fields:
+- type: text
+  name: title
+  label: title
+- type: datetime
+  name: date
+  label: date
+- type: datetime
+  name: publishdate
+  label: publishdate
+- type: text
+  name: preview
+  label: preview
+- type: boolean
+  name: featured
+  label: featured
+- type: text
+  name: layout
+  label: layout
