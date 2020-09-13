@@ -4,7 +4,7 @@ date: 2017-03-23
 publishdate: 2017-03-24
 preview: "WebApp per consultare l' orario scolastico."
 featured: true
-preview_image: "https://res.cloudinary.com/antoniosite/image/upload/v1600012451/Immagine_2020-09-13_175358_x0gcmg.png"
+preview_image: "https://res.cloudinary.com/antoniosite/image/upload/v1600012451/immagini_per_carosello/Orarioscolastico.png"
 ---
 
 Da qualche anno nella nostra scuola abbiamo adottato la rotazione delle aule, ogni classe durante la giornata scolastica doveva spostarsi e inizialmente era difficile ricordare dove andare. Gli orari cartacei erano grandi e scomodi da consultare cosi' ho deciso di trovare una soluzione.

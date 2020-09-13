@@ -4,7 +4,7 @@ date: 2017-03-23
 publishdate: 2017-03-24
 preview: "Programma per calcolare la massa molare di un composto, fatto in python"
 featured: true
-preview_image: "https://res.cloudinary.com/antoniosite/image/upload/v1600011734/brad-frost-atomic-design-800x391_m0juix.jpg"
+preview_image: "https://res.cloudinary.com/antoniosite/image/upload/v1600019044/immagini_per_carosello/brad-frost-atomic-design-800x391_m0juix.jpg"
 ---
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Adipiscing elit ut aliquam purus sit amet luctus venenatis. Auctor augue mauris augue neque gravida in fermentum et sollicitudin. At tellus at urna condimentum. Nulla malesuada pellentesque elit eget gravida cum sociis natoque. Parturient montes nascetur ridiculus mus. A erat nam at lectus urna duis convallis. Vestibulum mattis ullamcorper velit sed ullamcorper morbi. Massa id neque aliquam vestibulum morbi blandit. Mollis aliquam ut porttitor leo a diam sollicitudin tempor id. Sollicitudin ac orci phasellus egestas tellus rutrum tellus pellentesque. Accumsan lacus vel facilisis volutpat est. Feugiat sed lectus vestibulum mattis ullamcorper velit sed. Pellentesque adipiscing commodo elit at imperdiet dui accumsan sit. In ante metus dictum at tempor commodo ullamcorper. Dignissim enim sit amet venenatis urna cursus eget. Nisi scelerisque eu ultrices vitae auctor.
 
