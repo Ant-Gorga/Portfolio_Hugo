@@ -1,0 +1,7 @@
+baseURL = "/"
+languageCode = "it-it"
+title = "Antonio Gorga"
+[Params]
+ facebook = "https://www.facebook.it"
+ instagram = ""
+ github = ""

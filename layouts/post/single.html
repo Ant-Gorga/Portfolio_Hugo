@@ -1,0 +1,29 @@
+{{ define "main"}}
+
+<div class="container border border-warning">
+  <div class="row">
+    <div class="col border-bottom border-warning">
+      <p class="text-center">{{.Title}}</p>
+    </div>
+  </div>
+  <!--<div class="row">
+    <div class="col">
+    Featured image
+    </div>
+
+  </div>-->
+  <div class="row">
+    <div class="col">
+      <p class="text-right">{{.Params.date.Format "6 gennaio 2017"}}</p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <p class="text-center">{{.Content}}</p>
+    </div>
+
+  </div>
+
+</div>
+
+{{end}}

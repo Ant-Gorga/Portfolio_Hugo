@@ -1,0 +1,17 @@
+{{ define "main" }}
+  <br>
+  <div class="container">
+    <div class="row">
+    {{ range .Pages }}
+    <div class="col">
+      <div class="card" style="width: 18rem;">
+        <img class="card-img-top" src="{{.Params.imagelink}}" alt="Card image cap">
+        <div class="card-body">
+          <p class="card-text">{{.Params.title}}</p>
+        </div>
+        </div>
+      </div>
+      {{end}}
+    </div>
+  </div>
+{{ end }}

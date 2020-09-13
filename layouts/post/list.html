@@ -1,0 +1,21 @@
+{{ define "main" }}
+  <br>
+  <div class="container">
+    <div class="row">
+
+    {{ range .Pages }}
+
+    <div class="col">
+      <div class="card border-secondary" style="width: 18rem;">
+        <div class="card-body">
+          <h5 class="card-title">{{.Title}}</h5>
+          <p class="card-text">{{.Params.preview}}</p>
+          <a href="{{.Permalink}}" class="card-link">Continua a Leggere</a>
+        </div>
+      </div>
+      </div>
+
+    {{ end }}
+  </div>
+  </div>
+{{ end }}
