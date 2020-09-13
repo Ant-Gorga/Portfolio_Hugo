@@ -4,15 +4,12 @@
   <body>
     {{partial "navbar.html" .}}
     METTERCI L'HTML GIÀ FATTO
-    {{ if isset $.Params "facebook"}}
-     qua deve apparire {{$.Site.Params.facebook}}
-    {{end}}
     <br>
     {{ range where .Site.Pages "Params.featured" true}} <!--Capire-->
     <br>
-      {{.Content}}
       {{.Params.title}}
     {{end}}
+    </div>
     {{partial "footer.html"}}
     {{ partial "import.html"}}
 
