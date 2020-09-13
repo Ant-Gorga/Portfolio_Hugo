@@ -1,4 +1,4 @@
-baseURL = "/"
+baseURL = "https://flamboyant-hawking-2a02a5.netlify.app"
 languageCode = "it-it"
 title = "Antonio Gorga"
 [Params]
