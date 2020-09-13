@@ -19,7 +19,7 @@
           PQuisque scelerisque lacus in nulla consectetur, at dignissim magna varius. Nullam dictum congue leo ac vestibulum. Mauris id urna blandit, consectetur tortor non, consectetur nunc. Etiam consectetur feugiat nibh iaculis ornare. Donec mollis leo sit amet augue vehicula, non maximus sapien dapibus. Nulla facilisi. In scelerisque purus id sem convallis tincidunt id at nisl. Etiam nunc felis, vehicula vitae tristique ac, varius vel erat. Proin nibh velit, consequat quis lacinia in, mollis eget sem. Proin feugiat felis vel eros blandit, sed malesuada eros pharetra. Nullam sodales dui a justo aliquam rutrum. Ut non ullamcorper nunc. Morbi eu vestibulum lorem, quis aliquet justo. Curabitur arcu quam, vestibulum non turpis vitae, tempor dapibus turpis. 
         </div>
         <div class="col-sm-6 col-md-6 d-flex align-items-center">
-          <img src="https://res.cloudinary.com/antoniosite/image/upload/v1600011271/1_k8gh4v.jpg" alt="" />
+          <img src="https://res.cloudinary.com/antoniosite/image/upload/v1600011271/1_k8gh4v.jpg" class="img-fluid" />
         </div>
       </div>
       <hr>
@@ -33,7 +33,7 @@
             {{else}}
               <div class="carousel-item">
             {{end}}
-                  <img class="d-block w-100 blurred" src="{{.Params.preview_image}}" width="500" height="200" alt="slide" />
+                  <img class="d-block w-100 blurred" src="{{.Params.preview_image}}" alt="slide" />
                   <div class="carousel-caption d-none d-md-block">
                     <h5> <a href="{{.Permalink}}">{{.Title}}</a></h5>
                     <p>{{.Params.preview}}</p>
