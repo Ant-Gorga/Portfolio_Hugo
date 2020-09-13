@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<html lang="it" dir="ltr">
+  {{partial "header.html" . }}
+  <body>
+    {{partial "navbar.html" .}}
+    <div class="alert alert-warning d-flex justify-content-center" role="alert">
+      Errore 404! La pagina che cerchi ancora non esiste. <a href="{{.Site.BaseURL}}"> Vai alla Home</a>
+    </div>
+    {{ partial "import.html"}}
+  </body>
+</html>
