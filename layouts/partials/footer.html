@@ -5,22 +5,8 @@
     </span>
   </div>
   <div class="navbar-nav ml-auto">
-    <ul class="navbar-nav ml-auto ">
-      <li class="nav-item">
-        <span>Mi trovi anche su:</span>
-      </li>
-
-      {{$.Site.Params.facebook}}
-
-      {{ if isset $.Params "facebook"}}
-
-      <li class="nav-item">
-        <a class="nav-link" href="{{.Site.facebook}}">Foto</a>
-      </li>
-      {{end}}
-      <li class="nav-item">
-        <a class="nav-link "href="#">Blog</a>
-      </li>
-    </ul>
+        <div>
+          {{ partial "social.html" .}}
+        </div>
   </div>
 </nav>

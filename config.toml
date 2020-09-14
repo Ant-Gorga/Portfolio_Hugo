@@ -1,7 +1,7 @@
-baseURL = "https://flamboyant-hawking-2a02a5.netlify.app"
-languageCode = "it-it"
+baseURL = "https://abitofme.netlify.app"
+languageCode = "it-IT"
 title = "Antonio Gorga"
-[Params]
- facebook = "https://www.facebook.it"
+[params]
+ facebook = ""
  instagram = ""
  github = ""
