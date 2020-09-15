@@ -2,3 +2,17 @@
     filter: blur(3px);
     -webkit-filter: blur(3px);
 }
+
+.facebook:hover{
+    fill: #036bfc
+}
+.instagram:hover{
+
+    fill: #fc5e03;
+}
+
+/* .github:hover{
+
+    fill: #FFFFFF;
+
+} */

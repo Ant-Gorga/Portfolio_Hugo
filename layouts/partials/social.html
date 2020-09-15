@@ -1,35 +1,35 @@
 <!-- TODO:FARE LE CLASSI PER L'HOVER -->
 {{ $icon_size := "32px" }}
 {{ with .Param "facebook" }}
-<a href="{{ . }}" target="_blank" class="link-transition facebook 1" title="Facebook link" rel="noopener" aria-label="follow on Facebook——Opens in a new window">
+<a href="{{ . }}" target="_blank" class="link-transition facebook" title="Facebook link" rel="noopener" aria-label="follow on Facebook——Opens in a new window">
   {{ partial "svg/facebook.svg" (dict "size" $icon_size) }}
 </a>
 {{ end }}
 {{ with .Param "twitter" }}
-<a href="{{ . }}" target="_blank" class="link-transition twitter link dib z-999 pt3 pt0-l mr1" title="Twitter link" rel="noopener" aria-label="follow on Twitter——Opens in a new window">
+<a href="{{ . }}" target="_blank" class="link-transition twitter" title="Twitter link" rel="noopener" aria-label="follow on Twitter——Opens in a new window">
   {{ partial "svg/twitter.svg" (dict "size" $icon_size) }}
 
 </a>
 {{ end }}
 {{ with .Param "instagram" }}
-<a href="{{ . }}" target="_blank" class="link-transition instagram link dib z-999 pt3 pt0-l mr1" title="Instagram link" rel="noopener" aria-label="follow on Instagram——Opens in a new window">
+<a href="{{ . }}" target="_blank" class="link-transition instagram" title="Instagram link" rel="noopener" aria-label="follow on Instagram——Opens in a new window">
   {{ partial "svg/instagram.svg" (dict "size" $icon_size) }}
 
 </a>
 {{ end }}
 {{ with .Param "youtube" }}
-<a href="{{ . }}" target="_blank" class="link-transition youtube link dib z-999 pt3 pt0-l mr1" title="Youtube link" rel="noopener" aria-label="follow on Youtube——Opens in a new window">
+<a href="{{ . }}" target="_blank" class="link-transition youtube" title="Youtube link" rel="noopener" aria-label="follow on Youtube——Opens in a new window">
   {{ partial "svg/youtube.svg" (dict "size" $icon_size) }}
 </a>
 {{ end }}
 {{ with .Param "linkedin" }}
-<a href="{{ . }}" target="_blank" class="link-transition linkedin link dib z-999 pt3 pt0-l mr1" title="LinkedIn link" rel="noopener" aria-label="follow on LinkedIn——Opens in a new window">
+<a href="{{ . }}" target="_blank" class="link-transition linkedin" title="LinkedIn link" rel="noopener" aria-label="follow on LinkedIn——Opens in a new window">
   {{ partial "svg/linkedin.svg" (dict "size" $icon_size) }}
 
 </a>
 {{ end }}
 {{ with .Param "github" }}
-<a href="{{ . }}" target="_new" class="link-transition github link dib z-999 pt3 pt0-l mr1" title="Github link" rel="noopener" aria-label="follow on Github——Opens in a new window">
+<a href="{{ . }}" target="_new" class="link-transition github" title="Github link" rel="noopener" aria-label="follow on Github——Opens in a new window">
   {{ partial "svg/github.svg" (dict "size" $icon_size) }}
 </a>
 {{ end }}
@@ -51,10 +51,3 @@
   {{- partial "new-window-icon.html" . -}}
 </a>
 {{ end }} -->
-
-{{ with .Param "contatti" }}
-<a href="{{ . }}" target="_self" class="link-transition contatti link dib z-999 pt3 pt0-l mr1" title="contatti" rel="noopener">
-  {{ partial "svg/contatti.svg" (dict "size" $icon_size) }}
-  {{- partial "new-window-icon.html" . -}}
-</a>
-{{ end }}
