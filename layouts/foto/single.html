@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="it" dir="ltr">
+  {{partial "header.html" . }}
+  <body>
+    {{partial "navbar.html" .}}
+    
+    <div class="container">
+        <p class="d-flex justify-content-center"><a href="{{.Site.BaseURL}}/foto">Tutte le foto</a></p>
+        <br>
+        <img src="{{.Params.imagelink}}" alt="{{.Params.title}}" class="img-fluid">
+    </div>
+    {{ partial "import.html" .}}
+  </body>
+</html>

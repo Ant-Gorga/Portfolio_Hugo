@@ -1,0 +1,22 @@
+{{define "main"}}   
+    <div class="container">
+        Puoi trovarmi su instagram, github, oppure conttarmi usando il seguente form
+        <div class="border border-warning">
+
+
+          <form name="Contattami" method="POST" data-netlify="true">
+            <label for="exampleInputEmail1">Inserisci il tuo indirizzo email</label>
+            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+            <br>
+            <div class="form-group">
+                <label for="exampleFormControlTextarea1">Insersci il tuo messaggio</label>
+                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+            </div>
+            <p>
+              <button type="submit" class="btn btn-outline-primary">Invia</button>
+            </p>
+          </form>
+        </div>
+    </div>
+    <!-- TODO MIGLIORARE I TESTI e l'impaginazione-->
+{{end}}

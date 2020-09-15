@@ -4,3 +4,4 @@ title = "Antonio Gorga"
 [params] 
  instagram = "https://www.instagram.com/organsheroin/"
  github = "https://github.com/gamerita14"
+disableKinds = ["taxonomy", "term"]
