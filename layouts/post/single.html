@@ -1,29 +1,37 @@
 {{ define "main"}}
-
-<div class="container border border-warning">
-  <div class="row">
-    <div class="col border-bottom border-warning">
-      <p class="text-center">{{.Title}}</p>
-    </div>
-  </div>
-  <!--<div class="row">
-    <div class="col">
-    Featured image
-    </div>
-
-  </div>-->
+<br>
+<div class="container">
   <div class="row">
     <div class="col">
-      <p class="text-right">{{.Params.date.Format "02-01-2006"}}</p>
+      <h1 class="text-left">{{.Title}}</h1>
     </div>
   </div>
+  <div class="row">
+    <div class="col">
+      <hr>
+      Pubblicato il: {{.Params.date.Format "02-01-2006"}}
+      <hr>
+    </div>
+
+  </div>
+  <br>
+  <div class="row">
+    <div class="col-12 d-flex justify-content-center">
+     <img src="{{.Params.preview_image}}" >
+    </div>
+  </div>
+
   <div class="row">
     <div class="col">
       <p class="text-center">{{.Content}}</p>
     </div>
-
   </div>
-
+  
+  <div class="row">
+    <div class="col">
+      <p class="text-right"></p>
+    </div>
+  </div>
 </div>
 
 {{end}}

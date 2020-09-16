@@ -1,7 +1,7 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
     <a class="navbar-brand" href="{{.Site.BaseURL}}">
       <img src="https://res.cloudinary.com/antoniosite/image/upload/v1600010510/logo_hxuhwt.png" width="30" height="40" class="d-inline-block align-top" alt="" loading="lazy" >
-      Antonio Gorga</a>
+      {{.Site.Title}}</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -29,7 +29,7 @@
       {{end}}
         <a class="nav-link "href="{{.Site.BaseURL}}/post">Blog</a>
       </li>
-      <li>
+      <li class="nav-item">
         <a class="nav-link "href="{{.Site.BaseURL}}/post/contatti">Contatti</a>
       </li>
     </ul>
