@@ -6,5 +6,8 @@
   <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
   <link rel="icon" href="favicon.ico" type="image/x-icon">
   <link rel="stylesheet" href="/css/main.css">
+  {{if eq .Type "about"}}
+  <link rel="stylesheet" href="/css/about.css">
+  {{end}}
   <title>{{.Site.Title}} {{ .Params.subt}}  </title>
 </head>

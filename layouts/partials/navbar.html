@@ -29,8 +29,12 @@
       {{end}}
         <a class="nav-link "href="{{.Site.BaseURL}}/post">Blog</a>
       </li>
+      {{ if eq .Type "about"}}
+      <li class="nav-item active">
+      {{else}}
       <li class="nav-item">
-        <a class="nav-link "href="{{.Site.BaseURL}}/post/contatti">Contatti</a>
+      {{end}}
+        <a class="nav-link "href="{{.Site.BaseURL}}/about">About</a>
       </li>
     </ul>
   </div>

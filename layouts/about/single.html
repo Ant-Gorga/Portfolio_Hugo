@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="it" dir="ltr">
+  {{partial "header.html" . }}
+  {{ partial "import.html"}}
+  <body>
+    
+    <script>
+    $(document).ready(function() {
+    var options = {
+        stringsElement: '#typed-strings',
+        typeSpeed: 20,
+        backSpeed: 20,
+        shuffle: true
+    }
+
+    var typed = new Typed("#typed", options);
+    
+    $("#esegui").click(function(){
+        $("#neofetch").slideDown("fast");
+    });
+    $("#pulisci").click(function(){
+        $("#neofetch").hide();
+    });
+    });
+
+    </script>
+    {{partial "navbar.html" .}}
+    <div class="container">
+        <h1>
+            A B1t 0f Me - Presentazione
+        </h1>
+        <br>
+        <div class="row">
+            <div class="col-lg-6 col-sm-12">
+                {{.Content}}
+            </div>
+            <div class="col-lg-6 col-sm-12 terminal jusitfy-content-center">
+                <h6 class="testo">
+                    [root@arch user]# Mi piace <span id="typed"></span>
+                </h6>
+                <h6>
+                    [root@arch user]# neofetch 
+                    <button type="button" class="btn btn-outline-light" id="esegui">Esegui</button>
+                    <button type="button" class="btn btn-outline-light" id="pulisci">Pulisci</button>
+                </h6>
+                <h6 id="neofetch" style="display: none;">
+                    <div class="row">
+                        <div class="col">
+                            {{partial "image-terminal.html"}}
+                        </div>
+                        <div class="col">
+                            <br>
+                            <div>
+                                Name: <span class="caratteristiche"> Antonio</span>
+                            </div>
+                            <br>
+                            <div>
+                                Surname: <span class="caratteristiche">Gorga </span>
+                            </div>
+                            <br>
+                            <div>
+                                Uptime: <span class="caratteristiche">
+                                    <script>
+                                        var born = new Date("2002-08-30T13:00:00");
+                                        var now= new Date()
+                                        
+                                        document.write(Math.trunc((now-born)/(60000*60*24)))
+                                    </script>
+                                    giorni
+                                </span>
+                            </div>
+                            <br>
+                            <div>
+                                Resolution: <span class="caratteristiche">188 cm x 85 kg</span>
+                            </div>
+                            
+
+                        </div>
+                    </div>
+                        
+                    </p>
+                </h6>
+            </div>
+            <div id="typed-strings">
+                <p> Programmare</p>
+                <p>^1000 Studiare</p>
+                <p>^1000 Scoprire</p>
+                <p>^1000 Scrivere</p>
+            </div>
+        </div>
+
+    </div>
+  </body>
+</html>

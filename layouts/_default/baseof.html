@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="it" dir="ltr">
   {{partial "header.html" . }}
+  {{ partial "import.html" .}}
   <body>
     {{partial "navbar.html" .}}
     {{block "main" .}}
@@ -8,7 +9,6 @@
     {{end}}
     <br>
     {{partial "footer.html" .}}
-    {{ partial "import.html" .}}
   </body>
 </html>
 <!--FIXME:Non si vede la favicon in foto e blog-->
