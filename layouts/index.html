@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="it" dir="ltr">
+  {{ partial "import.html"}}
   {{partial "header.html" . }}
   <body>
     <script>
@@ -16,7 +17,7 @@
           </div>
         <div class="col-sm-6 col-md-6 d-flex align-items-center" >
           <p>
-            Ciao, mi presento, mi chiamo Antonio Gorga e ho 18 anni.Frequento il 5o anno di liceo scientifico, corso scienze applicate. L'informatica e' la mia piu' grande passione e voglio impegnarmi per trasformarla nella mia occupazione principale e non considerarla un semplice hobby. L'informatica per me non e' solo una disciplina, e' uno strumento per migliorarmi e crescere, a livello personale prima che professionale. Mi aiuta a rilassarmi, a pensare e mi dona soddisfazioni immense.
+            Ciao, mi presento, mi chiamo Antonio Gorga e ho 18 anni.Frequento il 5 anno di liceo scientifico, corso scienze applicate. L'informatica e' la mia piu' grande passione e voglio impegnarmi per trasformarla nella mia occupazione principale e non considerarla un semplice hobby. L'informatica per me non e' solo una disciplina, e' uno strumento per migliorarmi e crescere, a livello personale prima che professionale. Mi aiuta a rilassarmi, a pensare e mi dona soddisfazioni immense.
             <a href="{{.Site.BaseURL}}/about" data-toggle="tooltip" title="Continua a Leggere">[...]</a>
           </p>
         </div>
@@ -24,16 +25,18 @@
       <hr>
       <div class="row">
         <div class="col-sm-6 col-md-6 d-flex align-items-center">
-          Oltre all' informatica mi piacciono anche il cibo, la musica rap e la fotografia (nella quale mi applico poco), infatti il sito ha anche una sezione dedicata alle foto che ho scattato nel corso del tempo.
+          <p>
+            Oltre all' informatica mi piacciono anche il cibo, la musica rap e la fotografia (nella quale mi applico poco), infatti il sito ha anche una sezione dedicata alle foto che ho scattato nel corso del tempo.
+          </p>
+          
         </div>
         <div class="col-sm-6 col-md-6 d-flex align-items-center">
           <img src="https://res.cloudinary.com/antoniosite/image/upload/v1600011271/1_k8gh4v.jpg" class="img-fluid" />
         </div>
       </div>
       <hr>
-      <!--TODO Cambiare i nomi del caroseallo-->
       <!--Carosello-->
-      <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+      <div id="CarouselControl" class="carousel slide" data-ride="carousel">
         {{$primo:=true}}
         <div class="carousel-inner">
           {{ range where .Site.Pages "Params.featured" true}}
@@ -57,20 +60,19 @@
         {{$primo = false}}
         {{end}}
 
-        <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+        <a class="carousel-control-prev" href="#CarouselControl" role="button" data-slide="prev">
           <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="sr-only">Previous</span>
+          <span class="sr-only">Precedente</span>
         </a>
-        <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+        <a class="carousel-control-next" href="#CarouselControi" role="button" data-slide="next">
           <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="sr-only">Next</span>
+          <span class="sr-only">Successivo</span>
         </a>
       </div>
       <br>
     </div>
     </div>
     {{partial "footer.html" . }}
-    {{ partial "import.html"}}
   </body>
 </html>
 
