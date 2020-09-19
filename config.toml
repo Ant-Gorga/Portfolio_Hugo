@@ -1,7 +1,14 @@
 baseURL = "https://www.abitofme.it"
 languageCode = "it-IT"
 title = "A B1t 0f Me"
-[params] 
+[params]
  instagram = "https://www.instagram.com/organsheroin/"
  github = "https://github.com/gamerita14"
-disableKinds = ["taxonomy", "term"]
+
+[sitemap]
+  changefreq = "monthly"
+  filename = "sitemap.xml"
+  priority = 0.5
+
+[taxonomies]
+  category = "categorie"

@@ -19,6 +19,16 @@ h1, .title{
 
 }
 
+
 p{
     font-family: 'Raleway', sans-serif;
+}
+
+.btn-orange{
+  color: #ffffff;
+  background-color: orange;
+  border-color: #ffffff;
+}
+.border-orange{
+  border-color: orange;
 }

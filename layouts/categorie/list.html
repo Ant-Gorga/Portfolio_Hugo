@@ -1,0 +1,6 @@
+{{define "main"}}
+<!-- TODO: Cards con immagine e nome della categoria -->
+  {{ range .Pages}}
+  <a href="{{.Permalink}}">{{.Title}}</a>
+  {{end}}
+{{end}}

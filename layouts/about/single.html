@@ -3,7 +3,7 @@
   {{partial "header.html" . }}
   {{ partial "import.html"}}
   <body>
-    
+
     <script>
     $(document).ready(function() {
     var options = {
@@ -14,7 +14,7 @@
     }
 
     var typed = new Typed("#typed", options);
-    
+
     $("#esegui").click(function(){
         $("#neofetch").slideDown("fast");
     });
@@ -22,7 +22,7 @@
         $("#neofetch").hide();
     });
     });
-    
+
     </script>
     {{partial "navbar.html" .}}
     <div class="container">
@@ -41,7 +41,7 @@
                     [root@arch user]# Mi piace <span id="typed"></span>
                 </h6>
                 <h6>
-                    [root@arch user]# neofetch 
+                    [root@arch user]# neofetch
                     <button type="button" class="btn btn-outline-light" id="esegui">Esegui</button>
                     <button type="button" class="btn btn-outline-light" id="pulisci">Pulisci</button>
                 </h6>
@@ -65,7 +65,7 @@
                                     <script>
                                         var born = new Date("2002-08-30T13:00:00");
                                         var now= new Date()
-                                        
+
                                         document.write(Math.trunc((now-born)/(60000*60*24)))
                                     </script>
                                     giorni
@@ -75,11 +75,11 @@
                             <div>
                                 Resolution: <span class="caratteristiche">188 cm x 85 kg</span>
                             </div>
-                            
+
 
                         </div>
                     </div>
-                        
+
                     </p>
                 </h6>
             </div>

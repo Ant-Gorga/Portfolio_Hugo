@@ -2,13 +2,63 @@
 <html lang="it" dir="ltr">
   {{partial "header.html" . }}
   <body>
+    {{ partial "import.html" .}}
     {{partial "navbar.html" .}}
-    
     <div class="container">
-        <p class="d-flex justify-content-center"><a href="{{.Site.BaseURL}}/foto">Tutte le foto</a></p>
+      <br>
+      <hr>
+        <p class="d-flex justify-content-between">
+          {{ with .PrevInSection}}
+          <a href="{{.Permalink}}">
+            <svg width="3em" height="3em" viewBox="0 0 16 16" class="bi bi-arrow-left-square-fill" fill="orange" xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd" d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm9.5 8.5a.5.5 0 0 0 0-1H5.707l2.147-2.146a.5.5 0 1 0-.708-.708l-3 3a.5.5 0 0 0 0 .708l3 3a.5.5 0 0 0 .708-.708L5.707 8.5H11.5z"/>
+            </svg>
+          </a>
+          {{else}}
+          <a href="#" disabled>
+            <svg width="3em" height="3em" viewBox="0 0 16 16" class="bi bi-arrow-left-square-fill" fill="gray" xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd" d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm9.5 8.5a.5.5 0 0 0 0-1H5.707l2.147-2.146a.5.5 0 1 0-.708-.708l-3 3a.5.5 0 0 0 0 .708l3 3a.5.5 0 0 0 .708-.708L5.707 8.5H11.5z"/>
+            </svg>
+          </a>
+
+          {{end}}
+          <a href="{{.Site.BaseURL}}/foto">
+            <svg width="3em" height="3em" viewBox="0 0 16 16" class="bi bi-card-list" fill="orange" xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd" d="M14.5 3h-13a.5.5 0 0 0-.5.5v9a.5.5 0 0 0 .5.5h13a.5.5 0 0 0 .5-.5v-9a.5.5 0 0 0-.5-.5zm-13-1A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2h-13z"/>
+              <path fill-rule="evenodd" d="M5 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 5 8zm0-2.5a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zm0 5a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5z"/>
+              <circle cx="3.5" cy="5.5" r=".5"/>
+              <circle cx="3.5" cy="8" r=".5"/>
+              <circle cx="3.5" cy="10.5" r=".5"/>
+            </svg>
+          </a>
+          {{with .NextInSection}}
+          <a href="{{.Permalink}}">
+              <svg width="3em" height="3em" viewBox="0 0 16 16" class="bi bi-arrow-right-square-fill" fill="orange" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm2.5 8.5a.5.5 0 0 1 0-1h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5z"/>
+              </svg>
+          </a>
+          {{else}}
+          <a href="#" disabled>
+            <svg width="3em" height="3em" viewBox="0 0 16 16" class="bi bi-arrow-right-square-fill" fill="gray" xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd" d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm2.5 8.5a.5.5 0 0 1 0-1h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5z"/>
+            </svg>
+          </a>
+
+          {{end}}
+        </p>
+        <hr>
         <br>
+        <p class="d-flex justify-content-between">
+          <span>
+            {{.Title}}
+          </span>
+          <span>
+            {{.Params.date.Format "02-01-2006"}}
+          </span>
+
+        </p>
         <img src="{{.Params.imagelink}}" alt="{{.Params.title}}" class="img-fluid">
     </div>
-    {{ partial "import.html" .}}
+    <br>
   </body>
 </html>
