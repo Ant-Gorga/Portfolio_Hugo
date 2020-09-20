@@ -27,6 +27,11 @@
       {{else}}
       <li class="nav-item">
       {{end}}
+      {{ if  eq .Type "categorie"}}
+      <li class="nav-item active">
+      {{else}}
+      <li class="nav-item">
+      {{end}}
         <a class="nav-link "href="{{.Site.BaseURL}}/post">Blog</a>
       </li>
       {{ if eq .Type "about"}}

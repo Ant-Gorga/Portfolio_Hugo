@@ -1,3 +1,20 @@
 {{define "main"}}
-<p>ciao</p>
+<br>
+
+<div class="container">
+    <div class="card-columns">
+    {{range .Pages}}
+    <a href="{{.Permalink}}">
+        <div class="card text-white shadow-pop-tr" style="width: 300px;">
+            <img src="{{.Params.preview_image}}" class="card-img" width="150px" height="150px" >
+            <div class="card-img-overlay">
+                <div class="card-title">
+                    <mark>{{.Params.title}} </mark>
+                </div>
+            </div>
+        </div>
+    </a>
+        {{end}}
+    </div>
+</div>
 {{end}}

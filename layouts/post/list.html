@@ -1,6 +1,10 @@
 {{ define "main" }}
   <br>
   <div class="container">
+    <h5>
+      In questa pagina puoi trovare tutti i post che ho pubblicato, <a href="{{.Site.BaseURL}}/categorie">Clicca qui</a> per accedere alle categorie.
+    </h5>
+    <hr>
     <div class="row">
     {{ range .Pages.ByDate.Reverse }}
     <div class=" col-xl-4 col-lg-4 col-md-6 col-sm-12">
@@ -8,7 +12,12 @@
         <div class="card-body">
           <h5 class="card-title">{{.Title}}</h5>
           <p class="card-text">{{.Params.preview}}</p>
-          <a href="{{.Permalink}}" class="btn btn-orange">Continua a leggere</a>
+          <a href={{.Permalink}} class="btn btn-orange">Continua a leggere</a>
+          <hr>
+          {{$Var:= .Site.BaseURL}}
+          {{range .Params.categorie}}
+          <a href="{{$Var}}/categorie/{{ lower . }}" > {{.}}</a>
+          {{end}}
         </div>
       </div>
       <br>

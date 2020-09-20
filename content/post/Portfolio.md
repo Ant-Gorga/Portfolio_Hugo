@@ -7,5 +7,5 @@ del processo che ha portato alla creazione del sito"
 featured: true
 preview_image: "https://res.cloudinary.com/antoniosite/image/upload/v1600362049/Immagini_post/Sito.png"
 subt: "- Creazione"
-categorie: ["Svago"]
+categorie: ["Programmazione"]
 ---
