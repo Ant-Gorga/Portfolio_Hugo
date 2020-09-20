@@ -6,7 +6,7 @@
     {{range .Pages}}
     <a href="{{.Permalink}}">
         <div class="card text-white shadow-pop-tr" style="width: 300px;">
-            <img src="{{.Params.preview_image}}" class="card-img" width="150px" height="150px" >
+            <img src="{{.Params.preview_image}}" class="card-img" width="150px" height="150px" alt="{{.Params.title}}" >
             <div class="card-img-overlay">
                 <div class="card-title">
                     <mark>{{.Params.title}} </mark>

@@ -1,8 +1,8 @@
 ---
 title: OrarioScolastico
 date: 2017-03-23
-publishdate: 2017-03-24
 preview: "WebApp per consultare l' orario scolastico."
+descrizione_meta: "WebApp per consultare l' orario scolastico."
 featured: true
 preview_image: "https://res.cloudinary.com/antoniosite/image/upload/v1600588849/Immagini_post/OrarioScolastico_bsr7o4.png"
 subt: "- OraioScolastico"

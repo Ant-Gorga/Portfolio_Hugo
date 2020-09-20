@@ -11,4 +11,10 @@
   <title>{{.Site.Title}} {{ .Params.subt}}  </title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta charset="utf-8">
+  <meta name="description" 
+  content="{{if .Params.descrizione_meta}} 
+  {{.Params.descrizione_meta}} 
+  {{else}}  
+  {{.Site.Params.descrizione_meta}}
+  {{end}}">
 </head>

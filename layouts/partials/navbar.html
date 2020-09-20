@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
     <a class="navbar-brand title" href="{{.Site.BaseURL}}">
-      <img src="https://res.cloudinary.com/antoniosite/image/upload/v1600010510/logo_hxuhwt.png" width="30" height="40" class="d-inline-block align-top" alt="" loading="lazy" >
+      <img src="https://res.cloudinary.com/antoniosite/image/upload/v1600010510/logo_hxuhwt.png" width="30" height="40" class="d-inline-block align-top" alt="logo" loading="lazy" >
       {{.Site.Title}}</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -23,11 +23,6 @@
         <a class="nav-link" href="{{.Site.BaseURL}}/foto">Foto</a>
       </li>
       {{ if  eq .Type "post"}}
-      <li class="nav-item active">
-      {{else}}
-      <li class="nav-item">
-      {{end}}
-      {{ if  eq .Type "categorie"}}
       <li class="nav-item active">
       {{else}}
       <li class="nav-item">

@@ -1,0 +1,6 @@
+User-agent: *
+Disallow: /css/
+Disallow: /Js/
+
+
+Sitemap: https://www.abitofme.it/sitemap.xml

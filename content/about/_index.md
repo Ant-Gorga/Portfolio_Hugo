@@ -2,6 +2,7 @@
 title: Aboutme
 layout: single
 subt: "- About"
+descrizione_meta: "Presentazione del progetto e di chi c'è dietro, info su dove trovarmi ed altre informazioni"
 ---
 Ciao, mi presento, mi chiamo Antonio Gorga e ho 18 anni. Frequento il 5 anno di liceo scientifico, corso scienze applicate. L'informatica è la mia più grande passione e voglio impegnarmi per trasformarla nella mia occupazione principale e non considerarla un semplice hobby. L'informatica per me non è solo una disciplina, è uno strumento per migliorarmi e crescere, a livello personale prima che professionale. Mi aiuta a rilassarmi, a pensare e mi dona soddisfazioni immense.
 
