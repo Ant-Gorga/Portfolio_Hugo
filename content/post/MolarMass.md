@@ -1,7 +1,6 @@
 ---
 title: MolarMass
 date: 2017-03-23
-publishdate: 2017-03-24
 preview: "Programma per calcolare la massa molare di un composto, fatto in python."
 descrizione_meta: "Programma per calcolare la massa molare di un composto, fatto in python."
 featured: true

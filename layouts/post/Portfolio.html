@@ -1,0 +1,130 @@
+{{ define "main"}}
+<br>
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <h1 class="text-left">{{.Title}}</h1>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <hr>
+      Pubblicato il: {{.Params.date.Format "02-01-2006"}}
+      <hr>
+    </div>
+  </div>
+  <br>
+  <div class="row">
+    <div class="c">
+      <img src="{{.Params.preview_image}}" class="img-fluid" alt="immagine {{.Title}}">
+    </div>
+  </div>
+  <br>
+  <div class="row">
+    <div class="col">
+      <p>
+      <h3>
+        In questo post parlerò un po' del sito, la sua ideazione, la sua creazione e delle le teconologie utilizzate. Se
+        quindi siete interessati a saperne di più, Buona Lettura!
+      </h3>
+      <br>
+      <ul>
+        <li>
+          <p>
+            <a href="#Strumenti">Strumenti utilizzati</a>
+          </p>
+        </li>
+        <li>
+          <p><a href="#Realizzazione">Realizzazione</a></p>
+        </li>
+        <li>
+          <p><a href="#Problemi">Difficoltà e problemi riscontrati</a></p>
+        </li>
+      </ul>
+      <a name="Strumenti"></a>
+      <br>
+      <br>
+      <br>
+      <h3><strong>Strumenti utilizzati</strong></h5>
+      <p>Il sito e' stato realizzato con Hugo, un framework per la generazione di siti staticie Bootstrap 4, un framework per gestire piu' agilmente la grafica J-Query. Ma cosa fa un generatore di siti statici?</p>
+        Hugo crea automaticamente pagine web a partire da un layout definito dall'utente e da un file <code>.md</code>
+        cioe' markdown, diviso in frontmatter (La parte in cui sono definite le variabili) e il contenuto. Cio significa
+        che non dovremo scivere ogni singola pagina del nostro sito, ma solo il layout che vorremo dare alle pagine, ed
+        il contenuto in un file separato. A tutto questo si aggiunge il supporto ai template, potremo dunque utilizzare
+        Hugo senza toccare codice (o quasi), ma modificiando e creando solo file markdown.</p>
+
+        <p>Hugo genera automaticamente pagine list, e pagine single. Le prime servono a contenere liste di contenuti, come
+        la pagina in cui sono visibili tutti i post, la pagina single invece e' quella del post vero e prorpio. i Layout
+        sono organizzati nel seguente modo, immaginado di avere la categoria <em>post</em> troveremo
+        <code>layout/post/single.html</code> e <code>layout/post/list.html</code>. Esaminando il codice del sito
+        troveremo qualcosa di simile:</p>
+        <script src="/Js/prism.js"></script>
+        <pre>
+          <code class="language-html">
+&lt;div class="row">
+    &lt;div class="col">
+      &lt;h1 class="text-left">{\{.Title}}&lt;/h1>
+    &lt;/div>
+&lt;/div>
+&lt;div class="row">
+  &lt;div class="col">
+    &lt;hr>
+    Pubblicato il: {\{.Params.date.Format "02-01-2006"}}
+    &lt;hr>
+  &lt;/div>
+&lt;/div>
+          </code>
+        </pre>
+        <small>
+          Putroppo ho dovuto inserire un <code>\</code> backslash altrimenti hugo avrebbe sostituito con le varaibili effettive
+        </small>
+        <br>
+        <br>
+        <p> Tramite la notazione <code>{{ print "{{ }}"}}</code> richiamiamo quindi le variabili di hugo. Sono inoltre anche disponibili funzioni:
+          <pre>
+            <code class="language-html ">
+{\{ range .Pages.ByDate.Reverse }}
+  &lt;h1>
+    {\{ .Title}}
+  &lt;/h1>
+{\{ end }}
+            </code>
+          </pre>
+          <p>
+            ed operatori logici.
+          </p>
+          <pre>
+            <code class="language-html">
+{\{if eq .Type "about"}}
+&lt;link rel="stylesheet" href="/css/about.css">
+{\{end}}
+{\{if eq .Type "categorie"}}
+&lt;link rel="stylesheet" href="/css/categorie.css">
+{\{end}}
+{\{if eq .Params.display_code true}}
+&lt;link rel="stylesheet" href="/css/prism.css">
+{\{end}}             
+
+            </code>
+          </pre>
+      <h3><a name="Realizzazione"><strong>Realizzazione</strong></a></h3>
+      <br>
+      <p>La realizzazione e' stata tutto sommato semplice, in poco piu' di una settimana lo scheletro del sito era
+        terminato, i giorni seguenti sono serviti a migliorare i particolari e a scrivere i testi dei primi 3 articoli
+        che trovate sul sito. Ho lavorato al sito circa un paio d' ore al giorno, e nemmeno tutti i giorni. Considerando
+        che non sono un professionista e non ho un background in programmazione web, sono abbastanza soddisfatto dei
+        tempi e della resa complessiva del lavoro.</p>
+      <h3 name="Problemi"><a name="Problemi"></a><strong>Difficoltà e problemi riscontrati</strong></h3>
+      <br>
+      <p>Non sono ovviamente mancati problemi durante lo sviluppo del sito, anche per via, a mio avviso, della
+        documentazione di Hugo un po' carente in alcune sezionira. Ho trovato invece la documentazione di bootstrap
+        molto precisa e utile durante lo sviluppo Gli altri riguardavano prevalentemente il layout della pagina, e non
+        sono pertanto considereabili veri e propri problemi ma punti in cui sono carente e devo migliorare.</p>
+
+      </p>
+    </div>
+  </div>
+
+</div>
+
+{{end}}

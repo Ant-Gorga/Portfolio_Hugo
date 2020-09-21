@@ -1,3 +1,40 @@
-{{define "main"}}
-<p>devi scrivere questo</p>
+{{ define "main"}}
+<br>
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <h1 class="text-left">{{.Title}}</h1>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <hr>
+      Pubblicato il: {{.Params.date.Format "02-01-2006"}}
+      <hr>
+    </div>
+  </div>
+  <br>
+  <div class="row">
+    <div class="c">
+     <img src="{{.Params.preview_image}}" class="img-fluid" alt= "immagine {{.Title}}">
+    </div>
+  </div>
+  <script src="/Js/prism.js"></script>
+  <div class="row">
+    <div class="col">
+      <p class="text-center">
+        
+      </p>
+    </div>
+  </div>
+  
+  <div class="row">
+    <div class="col">
+      <p class="">
+          testo qua
+      </p>
+    </div>
+  </div>
+</div>
+
 {{end}}

@@ -11,6 +11,9 @@
   {{if eq .Type "categorie"}}
   <link rel="stylesheet" href="/css/categorie.css">
   {{end}}
+  {{if eq .Params.display_code true}}
+  <link rel="stylesheet" href="/css/prism.css">
+  {{end}}
   <title>{{.Site.Title}} {{ .Params.subt}}  </title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta charset="utf-8">
