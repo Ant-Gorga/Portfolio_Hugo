@@ -36,5 +36,6 @@ p,div{
 .border-orange{
   border-color: orange;
 }
-
-  
+.text-red{
+    color: red;
+}

@@ -2,13 +2,17 @@
 <div class="col">
   <script src="/Js/prism.js" charset="utf-8"></script>
   <br>
-  <h3>In questo post parlerò di un programma in python che calcola la massa molare di un composto.</h3>
+  <h3>In questo post parlerò di un programma in python che calcola la massa molare di un composto. È multipiattaforma ed utilizzabile
+    anche sulla nuova Ti-nspire CX II.
+  </h3>
+  <br>
   <p>Argomenti Trattati:</p>
   <ul>
     <li><p><a href="#Requisiti">Requisiti</a></p></li>
     <li><p><a href="#Descrizione">Descrizione</a></p></li>
-    <li><p><a href="#Problemi">Problemi</a></p></li>
-    <li><p><a href="#Texas">Sezione Texas Instrument</a></p></li>
+    <li><p><a href="#Utilizzo">Utilizzo</a></p></li>
+    <li><p><a href="#Texas">Versione Per Ti-nspire CX II</a></p></li>
+    <li><p><a href="#Conclusione">Conclusione</a></p></li>
   </ul>
 
   <br>
@@ -17,8 +21,8 @@
     <br>
     <h3><a href="#Requisiti">#</a><strong>Requisiti</strong></h3>
     <p>I requisiti del progamma sono basilari, c'é bisgono solo di avere installato python3.x.
-       La version con Tk va eseguita nella sessa cartella di molarmass.py, poiché la logica é lí
-       e viene chiamato come modulo. Per i requisiti della versione per calcolatrice grafica vedi l' ultimo capitolo.
+       La versione con Tk va eseguita nella sessa cartella di <code>MassaMolare.py</code>, poiché la logica é lí
+       e il file viene chiamato come modulo. Per i requisiti della versione per calcolatrice grafica vedi l'ultimo capitolo.
     </p>
   </section>
   <section id="Descrizione">
@@ -26,7 +30,7 @@
     <h3><a href="#Descrizione">#</a><strong>Descrizione</strong></h3>
     <p>
       Il programma é diviso in funzioni, poiché é sfruttato anche come modulo nella versione con Tk, quando invece
-      viene chiamato direttamente, il file si comporta di conseguenza, grazie a questa istruzione.
+      viene chiamato direttamente, il file si comporta di conseguenza, grazie a questo blocco di codice.
     </p>
     <pre>
       <code class="language-python">
@@ -46,15 +50,26 @@
     </pre>
     <br>
     <p>
-      La variabile <code>__name__</code> é una variabile speciale settata da python ad ogni esecuzione,
+      La variabile <code>__name__</code> é una variabile speciale impostata da python ad ogni esecuzione,
       se il programma é eseguito direttamente, questa prenderá come valore <code>__main__</code> e di conseguenza
-      verrá eseguito il codice che permette il funzionamento del programma. Diversamente se viene imporatto come modulo,
+      verrá eseguito il blocco precedentemente mostrato e il programma sarà indipendente. Diversamente se viene importato come modulo,
       la variabile avrá valore <code>MassaMolare</code>, saltando quindi il blocco di codice.
     </p>
-    <h4>La GUI</h4>
     <p>
-      La <abbr title="GRAPHICAL USER INTERFACE"><strong><mark> G.U.I</mark></strong></abbr> é fatta con Tkinter, un modulo multipiattafroma integrato in python.
-      Questo ne é un esempio banale, ma a dire il vero Tk é molto semplice da utilizzare
+      Tutta la logica del programma è abbastanza complessa. Schematizzando il processo, il programma esegue le seguenti operazioni: 
+      <ol>
+        <li><p> <span class="text-red">Cerca un elemento</span>  all'interno della formula.</p></li>
+        <li><p> <span class="text-red"> Aggiunge l'elemento</span>  ad un vettore contenenti tutti gli elementi presenti nella formula (se è gia presente ne incrementa il numero).</p></li>
+        <li><p>Una volta letta tutta la formula, <span class="text-red"> esegue una sommatoria</span> delle masse dei singoli elementi(moltiplicate per quante volte compaiono) e la stampa.</p></li>
+
+      </ol> 
+      Per una descrizione più completa e per dare uno sguardo al codie sorgente completo, visita il repository su github. <a href="{{.Site.Params.github}}/MassaMolare">Vai al repo.</a>
+    </p>
+    <h4>La GUI</h4>
+    <br>
+    <p>
+      La <abbr title="GRAPHICAL USER INTERFACE"><strong><mark> G.U.I</mark></strong></abbr> é stata creata con Tkinter, un modulo multipiattafroma integrato in python.
+      Tkinter è molto semplice da utilizzare e permette di realizzare interfacce grafiche con poche linee di codice.
     </p>
     <pre class="line-numbers">
     <code class="language-python">
@@ -73,13 +88,84 @@
   windows.mainloop()
     </code>
     </pre>
-    Brevemente, vengono dichiarati gli oggetti presenti <code>windows</code>, <code>Entry</code>, <code>Button</code>
-    e poi vengono posizionati nella pagina con la funzione <code>grid()</code>.
+    Brevemente, vengono dichiarati gli oggetti presenti <code>windows</code>, <code>Entry</code>, <code>Button</code> ecc.
+    e vengono poi posizionati nella pagina tramite la funzione <code>grid()</code>.
     La logica del programma é richiamata dalla funzione <code>btncliccato</code>.
-    Con la funzione <code>mainloop</code>, chiamata sull'oggetto di root <code>windows</code>
+    Con la funzione <code>mainloop</code>, chiamata sull'oggetto di <code>windows</code>
     fa renderizzare la finestra e iniziare il loop del programma.
-  </div>
+    
   </section>
+  <section id="Utilizzo">
+    <br>
+    <br>
+    <h3><a href="#Utilizzo">#</a><strong>Utilizzo</strong></h3>
+    <div class="alert alert-danger" role="alert">
+      Attenzione, la ricerca degli elementi è ovviamente case-sensitive, attenzione quindi a non inserire <code>NA</code> o <code>na</code> al posto di <code>Na</code>
+    </div>
+    <p>
+      L'utilizzo è molto semplice <code>MassaMolare.py</code> è utilizzabile semplicemente lanciandolo riga di comando, in questo modo.
+      <pre>
+        <code class="language-bash">
+          $ python3.8 MassaMolare.py "NaCl"
+        </code>
+      </pre>
+      sostiutendo poi ad <code>NaCl</code> il composto di nostro interesse.
+    </p>
+    <p>
+      Per quanto riguarda la versione gui, basta avviarla con la stessa metodologia.
+      <pre>
+        <code class="language-bash">
+          $ python3.8 MassaMolare_TK.py
+        </code>
+      </pre>
+      Ed utilizzarla poi normalmente.
+    </p>
+    <p></p>
+  </section>
+  <section id="Texas">
+    <br>
+    <br>
+    <h3><a href="#Texas">#</a><strong>Versione Per Ti-nspire CX II </strong><span class="badge badge-secondary">New</span></h3>
+    <p>
+      Da poco posseggo una Ti-nspire CX II-T, una calcolatrice grafica della <a href="https://education.ti.com/it/products">Texas Instrument</a> davvero fantastica.
+      Migliora sotto molti aspetti la precedente versione (con cui ho avuto modo di confrontarla) e, dall'ultimo aggiornamento software,
+      introduce anche il supporto nativo a python. La notizia migliore però è che vengono fornite delle librerie espandibili pronte ad interfacciarsi con la calcolatrice
+      e con altri strumenti della casa madre, come il Ti-Rover (di cui potete vedere una dimostrazione a <a href="">questo link</a>). Il tutto diventa quindi semplice sia
+      per chi ha già dimestichezza con python e per chi invece sa usare bene la calcolatrice, rendendola un prodotto potente e completo.
+    </p>
+    <p>
+      Veniamo dunque al programma, per poter utilizzare python bisogna aver installato l'aggiornamento di sistema
+      <code>5.2</code>. Per installarlo basta scaricarlo dal sito ufficiale, collegare la calcolatrice al pc, e tramite lo student software, incluso nella calcolatrice,
+      caricarlo su quest'ultima tramite <code>esplora contenuto</code> nella <code>Barra degli strumenti documento</code>.
+    </p>
+    <p>
+      Una volta fatto tutto questo bisogna creare un nuovo documento sulla calcolatrice virtuale, aggiungere un programma python vuoto, ed incollare tutto il codice 
+      presente nel file <code>MassaMolare_TI_Nspire_CX2.py</code>. Una volta fatto questo basta premere il tasto <code>Menu</code> e poi <code>esegui</code>.
+      Verremo quindi portati in una shell python dove ci basterà digitare il nome della funzione ed il composto desiderato.
+      <pre>
+        <code class="language-python">
+          >>> MassaMolare("NaCl")
+        </code>
+      </pre>
+    </p>
+    <p>
+      E ci verrà così restituito il valore cercato. <br>
+      Se Avete difficoltà con l'aggiornamento o con il passaggio del programma, potete contattarmi seguendo le informazioni <a href="{{.Site.BaseURL}}/about">Qui</a>.
+    </p>
+  </section>
+  <section id="Conclusione">
+    <br>
+    <br>
+    <h3><a href="#Conclusione">#</a><strong>Conclusione</strong></h3>
+    <p>
+      In Conclusione, questo progetto mi ha preso molto, e sono anche felice di averlo porato a termine poichè mi ritrovo ad utilizzarlo ogni giorno.
+      Il fatto che sia presente anche sulla calcolatrice lo rende molto versatile ed utilizzabile anche in classe <mark>(Occhio a chiedere il permeso!)</mark>.
+      Mi piacerebbe in futuro cimentarmi in più progetti multidisciplinari poichè a mio avviso incarnano perfettamente il mio ideale di informatica, una scienza al servizio dell'uomo.
+    </p>
+  </section>
+</div>
+
+
 
 
 
