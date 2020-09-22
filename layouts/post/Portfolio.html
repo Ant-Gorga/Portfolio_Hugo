@@ -1,26 +1,4 @@
 {{ define "main"}}
-<br>
-<div class="container">
-  <div class="row">
-    <div class="col">
-      <h1 class="text-left">{{.Title}}</h1>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col">
-      <hr>
-      Pubblicato il: {{.Params.date.Format "02-01-2006"}}
-      <hr>
-    </div>
-  </div>
-  <br>
-  <div class="row">
-    <div class="c">
-      <img src="{{.Params.preview_image}}" class="img-fluid" alt="immagine {{.Title}}">
-    </div>
-  </div>
-  <br>
-  <div class="row">
     <div class="col">
       <p>
       <h3>
@@ -45,7 +23,7 @@
       <br>
       <br>
       <br>
-      <h3><strong>Strumenti utilizzati</strong></h5>
+      <h3><strong>Strumenti utilizzati</strong></h3>
       <p>Il sito e' stato realizzato con Hugo, un framework per la generazione di siti staticie Bootstrap 4, un framework per gestire piu' agilmente la grafica J-Query. Ma cosa fa un generatore di siti statici?</p>
         Hugo crea automaticamente pagine web a partire da un layout definito dall'utente e da un file <code>.md</code>
         cioe' markdown, diviso in frontmatter (La parte in cui sono definite le variabili) e il contenuto. Cio significa
@@ -103,7 +81,7 @@
 {\{end}}
 {\{if eq .Params.display_code true}}
 &lt;link rel="stylesheet" href="/css/prism.css">
-{\{end}}             
+{\{end}}
 
             </code>
           </pre>
@@ -123,8 +101,4 @@
 
       </p>
     </div>
-  </div>
-
-</div>
-
 {{end}}

@@ -1,0 +1,87 @@
+{{ define "main"}}
+<div class="col">
+  <script src="/Js/prism.js" charset="utf-8"></script>
+  <br>
+  <h3>In questo post parlerò di un programma in python che calcola la massa molare di un composto.</h3>
+  <p>Argomenti Trattati:</p>
+  <ul>
+    <li><p><a href="#Requisiti">Requisiti</a></p></li>
+    <li><p><a href="#Descrizione">Descrizione</a></p></li>
+    <li><p><a href="#Problemi">Problemi</a></p></li>
+    <li><p><a href="#Texas">Sezione Texas Instrument</a></p></li>
+  </ul>
+
+  <br>
+  <section id="Requisiti">
+    <br>
+    <br>
+    <h3><a href="#Requisiti">#</a><strong>Requisiti</strong></h3>
+    <p>I requisiti del progamma sono basilari, c'é bisgono solo di avere installato python3.x.
+       La version con Tk va eseguita nella sessa cartella di molarmass.py, poiché la logica é lí
+       e viene chiamato come modulo. Per i requisiti della versione per calcolatrice grafica vedi l' ultimo capitolo.
+    </p>
+  </section>
+  <section id="Descrizione">
+    <br><br>
+    <h3><a href="#Descrizione">#</a><strong>Descrizione</strong></h3>
+    <p>
+      Il programma é diviso in funzioni, poiché é sfruttato anche come modulo nella versione con Tk, quando invece
+      viene chiamato direttamente, il file si comporta di conseguenza, grazie a questa istruzione.
+    </p>
+    <pre>
+      <code class="language-python">
+  if __name__ == "__main__":
+    try:
+      if sys.argv[1] == "-h":
+        printhelp()
+      else:
+        ris = MassaMolare(sys.argv[1])
+        if ris != ValueError:
+          print("La Massa Molare di " + sys.argv[1] + " é:"+ str(ris))
+        else:
+          print("Ricontrolla la formula!")
+    except IndexError:
+      printhelp()
+      </code>
+    </pre>
+    <br>
+    <p>
+      La variabile <code>__name__</code> é una variabile speciale settata da python ad ogni esecuzione,
+      se il programma é eseguito direttamente, questa prenderá come valore <code>__main__</code> e di conseguenza
+      verrá eseguito il codice che permette il funzionamento del programma. Diversamente se viene imporatto come modulo,
+      la variabile avrá valore <code>MassaMolare</code>, saltando quindi il blocco di codice.
+    </p>
+    <h4>La GUI</h4>
+    <p>
+      La <abbr title="GRAPHICAL USER INTERFACE"><strong><mark> G.U.I</mark></strong></abbr> é fatta con Tkinter, un modulo multipiattafroma integrato in python.
+      Questo ne é un esempio banale, ma a dire il vero Tk é molto semplice da utilizzare
+    </p>
+    <pre class="line-numbers">
+    <code class="language-python">
+  windows = tk.Tk()
+  input_box = tk.Entry(windows)
+  input_box.focus()
+  str_risposta = tk.StringVar() #StringVar definita da tk appositamente per questo, si aggiorna ad ogni set
+  button = tk.Button(windows,text="Calcola",command=btncliccato)
+  msg = tk.Label(windows,text="Inserisci la formula del composto:")
+  risultato_box = tk.Label(windows,textvariable=str_risposta)
+  [...]
+  msg.grid(row=0,column=0, sticky="N",padx=50)
+  input_box.grid(row=1,column=0,pady=20)
+  button.grid(row=2,column=0,pady=20)
+
+  windows.mainloop()
+    </code>
+    </pre>
+    Brevemente, vengono dichiarati gli oggetti presenti <code>windows</code>, <code>Entry</code>, <code>Button</code>
+    e poi vengono posizionati nella pagina con la funzione <code>grid()</code>.
+    La logica del programma é richiamata dalla funzione <code>btncliccato</code>.
+    Con la funzione <code>mainloop</code>, chiamata sull'oggetto di root <code>windows</code>
+    fa renderizzare la finestra e iniziare il loop del programma.
+  </div>
+  </section>
+
+
+
+
+{{end}}
