@@ -19,12 +19,15 @@
           <p><a href="#Problemi">Difficoltà e problemi riscontrati</a></p>
         </li>
       </ul>
-      <a name="Strumenti"></a>
+      <section id="Strumenti">
       <br>
       <br>
+      <h3><a href="#Strumenti">#</a><strong>Strumenti utilizzati</strong></h3>
       <br>
-      <h3><strong>Strumenti utilizzati</strong></h3>
-      <p>Il sito e' stato realizzato con Hugo, un framework per la generazione di siti staticie Bootstrap 4, un framework per gestire piu' agilmente la grafica J-Query. Ma cosa fa un generatore di siti statici?</p>
+      <br>
+      <p>Il sito e' stato realizzato con Hugo, un framework per la generazione di siti statici e Bootstrap 4, un framework per gestire piu' agilmente la grafica.
+        Per bootstrap sono inoltre richieste delle librerie di Javascript (J-Query e popperJs) che aiutano a gestire meglio i contenuti della pagina. 
+        <br> Ma cosa fa un generatore di siti statici?</p>
         Hugo crea automaticamente pagine web a partire da un layout definito dall'utente e da un file <code>.md</code>
         cioe' markdown, diviso in frontmatter (La parte in cui sono definite le variabili) e il contenuto. Cio significa
         che non dovremo scivere ogni singola pagina del nostro sito, ma solo il layout che vorremo dare alle pagine, ed
@@ -32,73 +35,132 @@
         Hugo senza toccare codice (o quasi), ma modificiando e creando solo file markdown.</p>
 
         <p>Hugo genera automaticamente pagine list, e pagine single. Le prime servono a contenere liste di contenuti, come
-        la pagina in cui sono visibili tutti i post, la pagina single invece e' quella del post vero e prorpio. i Layout
+        la pagina in cui sono visibili tutti i post, la pagina single invece e' quella del post vero e prorpio. I layout
         sono organizzati nel seguente modo, immaginado di avere la categoria <em>post</em> troveremo
-        <code>layout/post/single.html</code> e <code>layout/post/list.html</code>. Esaminando il codice del sito
-        troveremo qualcosa di simile:</p>
+        <code>layout/post/single.html</code> e <code>layout/post/list.html</code>. <br> Questo è un esempio di layout di una pagina single:</p>
+        <p>
+          Tramite la notazione <code>{{ print "{{ }}"}}</code> Hugo, ed al loro interno possiamo richiamare varabili (Le variabili <code>.Params</code>, sono quelle del frontmatter. ).
+        </p>
+        
+ 
         <script src="/Js/prism.js"></script>
         <pre>
           <code class="language-html">
 &lt;div class="row">
     &lt;div class="col">
-      &lt;h1 class="text-left">{\{.Title}}&lt;/h1>
+      &lt;h1 class="text-left">{{ print "{{" }}.Title}}&lt;/h1>
     &lt;/div>
 &lt;/div>
 &lt;div class="row">
   &lt;div class="col">
     &lt;hr>
-    Pubblicato il: {\{.Params.date.Format "02-01-2006"}}
+    Pubblicato il: {{ print "{{" }} .Params.date.Format "02-01-2006"}}
     &lt;hr>
   &lt;/div>
 &lt;/div>
           </code>
         </pre>
-        <small>
-          Putroppo ho dovuto inserire un <code>\</code> backslash altrimenti hugo avrebbe sostituito con le varaibili effettive
-        </small>
         <br>
-        <br>
-        <p> Tramite la notazione <code>{{ print "{{ }}"}}</code> richiamiamo quindi le variabili di hugo. Sono inoltre anche disponibili funzioni:
+
+        <p>  Sono inoltre anche disponibili funzioni. Nello specifico la funzione <code>range .Pages</code> esegue quel blocco di codice per ogni file markdown(ovvero una pagina) presente in una cartella.
           <pre>
             <code class="language-html ">
-{\{ range .Pages.ByDate.Reverse }}
+              {{ print "{{" }} range .Pages.ByDate.Reverse }}
   &lt;h1>
-    {\{ .Title}}
+  {{ print "{{" }} .Title}}
   &lt;/h1>
-{\{ end }}
+  {{ print "{{" }} end }}
             </code>
           </pre>
           <p>
-            ed operatori logici.
+            Ed operatori logici, in questo caso in base al tipo di pagina si decide se importare o meno determinati fogli di stile per velocizzare la pagina.
           </p>
           <pre>
             <code class="language-html">
-{\{if eq .Type "about"}}
+              {{ print "{{" }}if eq .Type "about"}}
 &lt;link rel="stylesheet" href="/css/about.css">
-{\{end}}
-{\{if eq .Type "categorie"}}
+{{ print "{{" }}end}}
+{{ print "{{" }}if eq .Type "categorie"}}
 &lt;link rel="stylesheet" href="/css/categorie.css">
-{\{end}}
-{\{if eq .Params.display_code true}}
+{{ print "{{" }}end}}
+{{ print "{{" }}if eq .Params.display_code true}}
 &lt;link rel="stylesheet" href="/css/prism.css">
-{\{end}}
+{{ print "{{" }}end}}
 
             </code>
           </pre>
-      <h3><a name="Realizzazione"><strong>Realizzazione</strong></a></h3>
-      <br>
-      <p>La realizzazione e' stata tutto sommato semplice, in poco piu' di una settimana lo scheletro del sito era
-        terminato, i giorni seguenti sono serviti a migliorare i particolari e a scrivere i testi dei primi 3 articoli
-        che trovate sul sito. Ho lavorato al sito circa un paio d' ore al giorno, e nemmeno tutti i giorni. Considerando
-        che non sono un professionista e non ho un background in programmazione web, sono abbastanza soddisfatto dei
-        tempi e della resa complessiva del lavoro.</p>
-      <h3 name="Problemi"><a name="Problemi"></a><strong>Difficoltà e problemi riscontrati</strong></h3>
-      <br>
-      <p>Non sono ovviamente mancati problemi durante lo sviluppo del sito, anche per via, a mio avviso, della
-        documentazione di Hugo un po' carente in alcune sezionira. Ho trovato invece la documentazione di bootstrap
-        molto precisa e utile durante lo sviluppo Gli altri riguardavano prevalentemente il layout della pagina, e non
-        sono pertanto considereabili veri e propri problemi ma punti in cui sono carente e devo migliorare.</p>
+          <br>
+          <h5> <strong>File markdown</strong></h5>
+          <p>
+            Come ho detto diverse volte precedentemente, ogni pagina è rappresentato da un file markdown, questo ne è un esempio.
+          </p>
+          <pre>
+            <code class="language-markdown">
+              ---
+              title: "A B1t 0f Me"
+              date: 2020-09-28
+              Preview: "Com'è nato questo portfolio? Quali programmi ho utilizzato? In questo articolo troverete una breve descrizione
+              del processo che ha portato alla creazione del sito."
+              featured: true
+              subt: "- Creazione"
+              categorie: ["Programmazione"]
+              descrizione_meta: "Com'è nato questo portfolio? Quali programmi ho utilizzato? In questo articolo troverete una breve descrizione
+              del processo che ha portato alla creazione del sito."
+              layout: Portfolio
+              display_code: true
+              ---
+              
+              Contenuto
+            </code>
+          </pre>
+          <p>
+            La parte delimitata è il frontmatter, in cui sono definite le variabili, richiamabili tramite <code>{{print "{{"}} .Params.xxx}}</code>.
+            Il contenuto è invece richiamabile con <code>{{print "{{"}} .Content}}</code>. L'articolo potrebbe anche essere scritto nel file markdown
+            ma per avere un layout più curato conviene scriverlo a mano.
+          </p>
+          <h5> <strong>Hosting, dominio e pubblicazione.</strong></h5>
+          <p>
+            Una delle cose più belle è che tutto questo è completamente gratuito (spese di dominio escluse). Il sito è hostato su Netlify, un servizio gratuito
+            che si collega con github. Ad ogni modifica del repository, il sito viene compilato e pubblicato in automatico, se non vi sono errori ovviamente.
+            Il dominio è costato circa 4€ per un anno, una cifra irrisoria. Insomma, se siete interessati, non avete scuse per non provare!
+          </p>
+      </section>
 
-      </p>
+      <section id="Realizzazione">
+        <br>
+        <br>
+        <h3><a href="#Realizzazione">#</a><strong>Realizzazione</strong></h3>
+        <p>La realizzazione e' stata tutto sommato semplice, in poco piu' di una settimana lo scheletro del sito era
+          terminato, i giorni seguenti sono serviti a migliorare i particolari e a scrivere i testi dei primi articoli
+          che trovate sul sito. Considerando che non sono un professionista e non ho un background in programmazione web, sono abbastanza soddisfatto dei
+          tempi e della resa complessiva del lavoro. Per la realizzazione completa ci sono volute circa tre settimane.</p>
+      </section>
+      <section id="Problemi">
+      <br>
+      <br>
+      <h3><a href="#Problemi">#</a><strong>Difficoltà e problemi riscontrati</strong></h3>
+      <p>Non sono ovviamente mancati problemi durante lo sviluppo del sito, anche per via, a mio avviso, della
+        documentazione di Hugo un po' carente in alcune sezioni. Alcune funzioni, a mio avviso, sono poco docu
+        mentate e manchevoli di esempi. Ho trovato invece la documentazione di bootstrap
+        molto precisa e utile durante lo sviluppo. Gli altri problemi riguardavano prevalentemente il layout della pagina, e non
+        sono pertanto considereabili veri e propri problemi ma punti in cui sono carente e devo migliorare.</p>
+      </p>  
+      </section>
+      <br>
+      <section>
+        <h3><a href="#Conclusione">#</a><strong>Conclusione</strong></h3>
+        <br>
+        <br>
+        <p>
+          Spero di avervi incuriosito e spronato con questo articolo, dato che è uno dei primi spero sia quantomeno accettabile, per qulasiasi critica o 
+          consiglio, mi trovate <a href="{{.Site.BaseURL}}/about#contatti">Qui</a>. <br>
+          In conclusione lascio alcuni link utili per approfondire.
+          <br>
+          <a href="https://gohugo.io/">Hugo</a><br>
+          <a href="https://getbootstrap.com/">Bootstrap</a><br>
+          <a href="https://www.netlify.com/">Netlify</a><br> 
+          <a href="https://github.com/gamerita14/Portfolio_Hugo">Il codice del sito</a>
+        </p>
+      </section>
     </div>
 {{end}}

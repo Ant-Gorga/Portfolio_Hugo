@@ -9,6 +9,7 @@ subt: "- OraioScolastico"
 categorie: ["Programmazione"]
 layout: OrarioScolastico
 display_code: true
+draft: true
 ---
 
 Da qualche anno nella nostra scuola abbiamo adottato la rotazione delle aule, ogni classe durante la giornata scolastica doveva spostarsi e inizialmente era difficile ricordare dove andare. Gli orari cartacei erano grandi e scomodi da consultare cosi' ho deciso di trovare una soluzione.
