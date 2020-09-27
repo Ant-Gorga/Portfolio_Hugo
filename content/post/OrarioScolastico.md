@@ -1,6 +1,6 @@
 ---
 title: OrarioScolastico
-date: 2017-03-23
+date: 2020-09-27
 preview: "WebApp per consultare l' orario scolastico."
 descrizione_meta: "WebApp per consultare l' orario scolastico."
 featured: true

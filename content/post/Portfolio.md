@@ -1,6 +1,6 @@
 ---
 title: "A B1t 0f Me"
-date: 2020-09-19
+date: 2020-09-27
 Preview: "Com'è nato questo portfolio? Quali programmi ho utilizzato? In questo articolo troverete una breve descrizione
 del processo che ha portato alla creazione del sito."
 featured: true
