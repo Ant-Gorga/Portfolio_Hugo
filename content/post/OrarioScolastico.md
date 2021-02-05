@@ -7,7 +7,7 @@ featured: true
 preview_image: "https://res.cloudinary.com/antoniosite/image/upload/v1600588849/Immagini_post/OrarioScolastico_bsr7o4.png"
 subt: "- OraioScolastico"
 categorie: ["Programmazione"]
-layout: OrarioScolastico
+layout: 
 display_code: true
 draft: true
 ---
@@ -17,6 +17,12 @@ Da qualche anno nella nostra scuola abbiamo adottato la rotazione delle aule, og
 Creare una sito con una piccola applicazione era sicuramente consigliato poiche' lo scopo era creare qualcosa che potesse essere visualizzato facilmente da tutti e ovunque. Il sito e' stato fatto con l' ausilio del framework Angular, che ho usato per la grafica e la gestione dei dati inseriti da parte dell'utente. Per quanto riguarda la gestione dei dati inseriti, essa e' effettuata da un backend scritto in php che genera delle query sql. I risultati vengono poi restituiti alla pagina web, che si occupa di mostrarli all'utente.
 
 Il sito web e' attualmente hostato sulla rete locale scolastica, dove viene consultato da chi ne ha bisogno
+
+---
+
+# asdasdsa
+
+oggi `e succeso questo
 
 ```html
 VEDERE COME FARE PER INSERIRE CODICE NELLA PAGINA
