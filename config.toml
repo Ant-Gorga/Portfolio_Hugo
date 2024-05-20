@@ -1,4 +1,4 @@
-baseURL = "https://www.abitofme.it"
+baseURL = "https://abitofme.netlify.app"
 languageCode = "it-IT"
 title = "A B1t 0f Me"
 enableRobotsTXT = true
